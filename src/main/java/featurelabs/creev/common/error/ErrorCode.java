@@ -11,7 +11,8 @@ public enum ErrorCode {
     PRODUCT_NOT_FOUND(HttpStatus.NOT_FOUND, "상품을 찾을 수 없습니다."),
     STOCK_NOT_FOUND(HttpStatus.NOT_FOUND, "상품 재고 정보를 찾을 수 없습니다."),
     ORDER_NOT_FOUND(HttpStatus.NOT_FOUND, "주문 정보를 찾을 수 없습니다."),
-
+    PAYMENT_NOT_FOUND(HttpStatus.NOT_FOUND, "결제 정보를 찾을 수 없습니다."
+    ),
     DUPLICATE_ORDER(HttpStatus.CONFLICT, "이미 처리 중이거나 완료된 주문이 존재합니다."),
     IDEMPOTENCY_KEY_CONFLICT(HttpStatus.CONFLICT, "동일한 멱등키로 다른 주문 요청을 처리할 수 없습니다."),
     PRODUCT_OUT_OF_STOCK(HttpStatus.CONFLICT, "해당 상품의 재고가 소진되었습니다."),
