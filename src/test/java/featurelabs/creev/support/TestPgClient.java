@@ -1,4 +1,4 @@
-package support;
+package featurelabs.creev.support;
 
 import featurelabs.creev.payment.infrastructure.PaymentFailureException;
 import featurelabs.creev.payment.infrastructure.PgClient;
