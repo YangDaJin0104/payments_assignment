@@ -1,8 +1,10 @@
 package featurelabs.creev.payment.infrastructure;
 
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
 @Component
+@Profile("!test")
 public class MockPgClient implements PgClient {
 
     @Override
