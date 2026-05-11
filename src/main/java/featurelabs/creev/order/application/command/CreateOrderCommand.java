@@ -1,0 +1,14 @@
+package featurelabs.creev.order.application.command;
+
+public record CreateOrderCommand(
+        Long userId,
+        Long productId,
+        int quantity,
+        String idempotencyKey,
+        String requestHash
+) {
+
+    public CreateOrderCommand {
+        idempotencyKey = idempotencyKey.trim();
+    }
+}
