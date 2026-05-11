@@ -1,4 +1,4 @@
-package featurelabs.creev.order.application.support;
+package featurelabs.creev.order.core.application.support;
 
 import org.springframework.stereotype.Component;
 

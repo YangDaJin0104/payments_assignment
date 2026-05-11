@@ -1,7 +1,7 @@
-package featurelabs.creev.order.infrastructure;
+package featurelabs.creev.order.core.infrastructure;
 
-import featurelabs.creev.order.domain.Order;
-import featurelabs.creev.order.domain.OrderStatus;
+import featurelabs.creev.order.core.domain.Order;
+import featurelabs.creev.order.core.domain.OrderStatus;
 import jakarta.persistence.LockModeType;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;

@@ -1,6 +1,6 @@
-package featurelabs.creev.order.infrastructure;
+package featurelabs.creev.order.core.infrastructure;
 
-import featurelabs.creev.order.domain.Payment;
+import featurelabs.creev.order.core.domain.Payment;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

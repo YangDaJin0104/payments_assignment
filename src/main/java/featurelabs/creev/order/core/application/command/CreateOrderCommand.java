@@ -1,4 +1,4 @@
-package featurelabs.creev.order.application.command;
+package featurelabs.creev.order.core.application.command;
 
 public record CreateOrderCommand(
         Long userId,
