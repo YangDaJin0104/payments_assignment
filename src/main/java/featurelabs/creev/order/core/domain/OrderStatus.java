@@ -1,4 +1,4 @@
-package featurelabs.creev.order.domain;
+package featurelabs.creev.order.core.domain;
 
 public enum OrderStatus {
     PENDING_PAYMENT,

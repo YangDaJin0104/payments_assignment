@@ -1,4 +1,4 @@
-package featurelabs.creev.order.domain;
+package featurelabs.creev.order.core.domain;
 
 import featurelabs.creev.common.error.BusinessException;
 import featurelabs.creev.common.error.ErrorCode;

@@ -1,6 +1,6 @@
 package featurelabs.creev.order.api.dto;
 
-import featurelabs.creev.order.domain.Order;
+import featurelabs.creev.order.core.domain.Order;
 
 public record CreateOrderResponse(
         Long orderId,
