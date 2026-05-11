@@ -63,6 +63,21 @@ public class OrderTransactionService {
         ProductStock stock = productStockRepository.findByProductIdForUpdate(command.productId())
                 .orElseThrow(() -> new BusinessException(ErrorCode.STOCK_NOT_FOUND));
 
+        /*
+         * 동시 멱등 요청 보정
+         *
+         * 첫 조회 시점에는 주문이 없었더라도, 다른 트랜잭션이 ProductStock lock을 잡고
+         * 같은 userId + idempotencyKey 주문을 생성한 뒤 커밋했을 수 있다.
+         *
+         * 이 경우 같은 멱등키 + 같은 requestHash 요청은 DUPLICATE_ORDER가 아니라 기존 주문 반환이어야 한다.
+         */
+        Order existingOrderAfterLock = findExistingOrderOrNull(command);
+
+        if (existingOrderAfterLock != null) {
+            validateSameRequestHash(existingOrderAfterLock, command.requestHash());
+            return PreparedOrder.existingOrder(existingOrderAfterLock);
+        }
+
         validateNotDuplicateActiveOrder(
                 command.userId(),
                 command.productId()
