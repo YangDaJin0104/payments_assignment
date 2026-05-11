@@ -14,7 +14,7 @@ import jakarta.persistence.UniqueConstraint;
 
 import java.time.LocalDateTime;
 
-@Entity
+@Entity(name = "OrderEntity")
 @Table(
         name = "orders",
         uniqueConstraints = {
