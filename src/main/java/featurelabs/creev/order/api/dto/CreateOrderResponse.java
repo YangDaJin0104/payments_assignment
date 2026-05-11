@@ -1,6 +1,6 @@
 package featurelabs.creev.order.api.dto;
 
-import featurelabs.creev.order.core.domain.Order;
+import featurelabs.creev.order.core.application.result.CreateOrderResult;
 
 public record CreateOrderResponse(
         Long orderId,
@@ -10,13 +10,15 @@ public record CreateOrderResponse(
         String status
 ) {
 
-    public static CreateOrderResponse from(Order order) {
+    public static CreateOrderResponse from(
+            CreateOrderResult result
+    ) {
         return new CreateOrderResponse(
-                order.getId(),
-                order.getProductId(),
-                order.getQuantity(),
-                order.getAmount(),
-                order.getStatus().name()
+                result.orderId(),
+                result.productId(),
+                result.quantity(),
+                result.amount(),
+                result.status().name()
         );
     }
 }
