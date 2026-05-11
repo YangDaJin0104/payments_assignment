@@ -16,11 +16,13 @@ public enum ErrorCode {
     IDEMPOTENCY_KEY_CONFLICT(HttpStatus.CONFLICT, "동일한 멱등키로 다른 주문 요청을 처리할 수 없습니다."),
     PRODUCT_OUT_OF_STOCK(HttpStatus.CONFLICT, "해당 상품의 재고가 소진되었습니다."),
     INVALID_ORDER_STATUS(HttpStatus.CONFLICT, "현재 주문 상태에서는 처리할 수 없습니다."),
+    INVALID_PAYMENT_STATUS(HttpStatus.CONFLICT, "현재 결제 상태에서는 처리할 수 없습니다."),
 
     PAYMENT_FAILED(HttpStatus.BAD_GATEWAY, "결제 처리 중 오류가 발생했습니다. 잠시 후 다시 시도해 주세요."),
 
     LOCK_TIMEOUT(HttpStatus.SERVICE_UNAVAILABLE, "주문 요청이 일시적으로 많아 처리하지 못했습니다. 잠시 후 다시 시도해 주세요."),
 
+    INVALID_STOCK_STATE(HttpStatus.INTERNAL_SERVER_ERROR, "재고 상태가 올바르지 않습니다."),
     INTERNAL_SERVER_ERROR(HttpStatus.INTERNAL_SERVER_ERROR, "서버 내부 오류가 발생했습니다.");
 
     private final HttpStatus status;
