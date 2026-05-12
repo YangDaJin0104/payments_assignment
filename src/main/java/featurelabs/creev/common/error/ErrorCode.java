@@ -7,6 +7,7 @@ public enum ErrorCode {
     INVALID_REQUEST(HttpStatus.BAD_REQUEST, "잘못된 요청입니다."),
     INVALID_ORDER_QUANTITY(HttpStatus.BAD_REQUEST, "주문 수량은 1개 이상이어야 합니다."),
     EXCEEDS_MAX_PURCHASE_QUANTITY(HttpStatus.BAD_REQUEST, "해당 상품은 1인당 구매 가능한 수량을 초과했습니다."),
+    INVALID_CURSOR(HttpStatus.BAD_REQUEST, "커서 값이 올바르지 않습니다."),
 
     PRODUCT_NOT_FOUND(HttpStatus.NOT_FOUND, "상품을 찾을 수 없습니다."),
     STOCK_NOT_FOUND(HttpStatus.NOT_FOUND, "상품 재고 정보를 찾을 수 없습니다."),
